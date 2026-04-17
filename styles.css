@@ -1,0 +1,144 @@
+/* css styles */
+/* ナビゲーションバーのロゴの大きさを調整 */
+.navbar-logo {
+  max-height: 80px; /* ← ここの数字（60）を大きくするとロゴが大きくなります */
+  height: auto;
+  width: auto;
+  margin-top: 1px;   /* ロゴの上の余白を調整したい場合 */
+  margin-bottom: 1px; /* ロゴの下の余白を調整したい場合 */
+}
+
+/* ナビゲーションバーのボタン（リンク）を四角い青色にする */
+.navbar-nav .nav-link {
+  background-color: #003399; /* ライオンズブルー（濃い青） */
+  color: white !important;   /* 文字を白にして読みやすく */
+  margin-left: 10px;        /* ボタン同士の隙間 */
+  padding: 8px 25px !important; /* ボタンの中の余白（四角の大きさ） */
+  border-radius: 4px;       /* 少しだけ角を丸く（真っ四角なら0pxに） */
+  font-weight: bold;
+  transition: 0.3s;         /* ふわっと色を変えるアニメーション */
+}
+
+/* マウスを乗せた（ホバー）時の色 */
+.navbar-nav .nav-link:hover {
+  background-color: #0055cc; /* 少し明るい青に */
+  color: #FFD700 !important; /* 文字を黄色に（アオイさんのこだわり！） */
+}
+
+/* ページが読み込まれた時のアニメーション */
+body {
+  animation: fadeIn 0.8s ease-in-out; /* 0.8秒かけてふわっと表示 */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); /* 右から左へ */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* アニメーションの共通設定（透明から始まる） */
+.sub-text, .main-title {
+  opacity: 0;
+  display: block;
+  text-align: center;
+}
+
+/* 1. キャッチコピーの動き */
+.sub-text {
+  font-size: 1.2em;
+  color: #FFD700;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  /* 0.5秒後に開始 */
+  animation: gameTitleAppearance 1.5s ease-out 0.5s forwards;
+}
+
+/* 2. 大阪セントラルレオの動き */
+.main-title {
+  font-size: 1.8em;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  /* 2.5秒後に開始 */
+  animation: gameTitleAppearance 1s ease-out 1.5s forwards;
+}
+
+/* アニメーション本体 */
+@keyframes gameTitleAppearance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 画像ボタン全体の箱 */
+.img-button {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important; /* リンクの下線を消す */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  margin: 10px;
+}
+
+/* 中の画像 */
+.img-button img {
+  width: 100%;
+  height: 200px; /* 高さを揃えると綺麗に見えます */
+  object-fit: cover; /* 画像を枠に合わせて切り抜く */
+  display: block;
+}
+
+/* 下の青い四角（ラベル） */
+.button-label {
+  background-color: #003399; /* 濃い青 */
+  color: white !important;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+/* マウスを乗せた時の動き */
+.img-button:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.img-button:hover .button-label {
+  background-color: #FFD700; /* 黄色に変わる */
+  color: #003399 !important;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* 中央に寄せる */
+  align-items: stretch;    /* ボタンの高さを揃える */
+  gap: 20px;               /* ボタン同士の間隔 */
+  flex-wrap: wrap;         /* スマホでは折り返す */
+  margin: 50px auto;
+  max-width: 1000px;       /* 広がりすぎないように制限 */
+}
+
+.img-button {
+  flex: 0 1 300px;        /* 横幅を300pxで固定 */
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  /* 念のため追加 */
+  vertical-align: top; 
+}
