@@ -1,0 +1,44 @@
+---
+execute: 
+  echo: false
+---
+
+::: welcome-animation
+# 自分たちにしかできないことで、皆を笑顔にしたい！ {.sub-text}
+
+# 大阪セントラルレオ {.main-title}
+:::
+
+::: {data-aos="fade-up" data-aos-delay="2500"}
+![](images/thumbnail.jpg) 
+:::
+
+
+::: {.vspace style="margin-bottom: 290px;"}
+:::
+
+::: {data-aos="fade-up" data-aos-duration="1000"}
+### 私達は大阪セントラルレオです！
+大阪セントラルレオクラブは、青少年が中心となって活動しているボランティア団体です！
+:::
+
+::: {data-aos="fade-right" data-aos-delay="300"}
+:::
+
+::: {.button-container}
+
+<a href="about.qmd" class="img-button" data-aos="fade-up">
+  ![](images/photo-about.png)
+  <div class="button-label">私達について</div>
+</a>
+
+<a href="activity.qmd" class="img-button" data-aos="fade-up" data-aos-delay="200">
+  ![](images/activity.JPG)
+  <div class="button-label">活動実績</div>
+</a>
+
+<a href="contact.qmd" class="img-button" data-aos="fade-up" data-aos-delay="400">
+  ![](images/contact-about.jpg)
+  <div class="button-label">連絡フォーム</div>
+</a>
+:::
